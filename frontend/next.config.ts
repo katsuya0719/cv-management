@@ -1,7 +1,6 @@
 import nextra from "nextra";
 
 const withNextra = nextra({
-    contentDirBasePath: "/src/content", // Path to your content directory
 });
 
 export default withNextra({
