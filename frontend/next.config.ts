@@ -4,6 +4,7 @@ const withNextra = nextra({
 });
 
 export default withNextra({
+    output: 'export', // Enable static export
     turbopack: {
         resolveAlias: {
             // Path to your `mdx-components` file with extension
