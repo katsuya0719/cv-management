@@ -2,6 +2,7 @@ import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
+import { ReactNode } from 'react'
  
 export const metadata = {
   // Define your metadata here
@@ -15,8 +16,9 @@ const navbar = (
   />
 )
 const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>
- 
-export default async function RootLayout({ children }) {
+
+
+export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       // Not required, but good for SEO

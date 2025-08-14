@@ -1,29 +1,30 @@
 import { generateStaticParamsFor, importPage } from 'nextra/pages'
 import { useMDXComponents as getMDXComponents } from '../../mdx-components'
- 
+
+//どのMDXファイルを静的ページとして生成するかを指定している
 export const generateStaticParams = generateStaticParamsFor('mdxPath')
- 
-export async function generateMetadata(props) {
-  const params = await props.params
-  const { metadata } = await importPage(params.mdxPath)
+
+type myProps = {
+  params: Promise<{ mdxPath: string[] }>
+}
+
+export async function generateMetadata({ params }: myProps) {
+  const { mdxPath } = await params
+  const { metadata } = await importPage(mdxPath)
   return metadata
 }
- 
-const Wrapper = getMDXComponents().wrapper
- 
-export default async function Page(props) {
-  const params = await props.params
-  console.log('Loading page:', params.mdxPath)
-  const {
-    default: MDXContent,
-    toc,
-    metadata,
-    sourceCode
-  } = await importPage(params.mdxPath)
-  console.log('debug:',toc, metadata, sourceCode)
+
+const Wrapper = getMDXComponents({}).wrapper
+
+export default async function Page({ params }: myProps) {
+  const { mdxPath } = await params
+  console.log('mdxPath', mdxPath)
+
+  const { default: MDXContent, toc, metadata } = await importPage(mdxPath)
+
   return (
-    <Wrapper toc={toc} metadata={metadata} sourceCode={sourceCode}>
-      <MDXContent {...props} params={params} />
+    <Wrapper toc={toc} metadata={metadata}>
+      <MDXContent params={mdxPath} />
     </Wrapper>
   )
 }
