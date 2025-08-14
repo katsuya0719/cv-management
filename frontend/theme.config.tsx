@@ -1,7 +1,7 @@
 import React from 'react';
-import { DocsThemeConfig } from 'nextra-theme-docs';
+import type { ThemeConfig } from 'nextra-theme-docs';
 
-const config: DocsThemeConfig = {
+const config:ThemeConfig = {
   logo: <span>CV Management</span>,
   project: {
     link: 'https://github.com/katsuya/cv-management',
