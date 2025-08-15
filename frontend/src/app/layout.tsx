@@ -3,6 +3,8 @@ import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import { ReactNode } from 'react'
+import './globals.css';
+import '../styles/print.css';
  
 export const metadata = {
   // Define your metadata here
@@ -22,7 +24,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html
       // Not required, but good for SEO
-      lang="en"
+      lang="ja"
       // Required to be set
       dir="ltr"
       // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app

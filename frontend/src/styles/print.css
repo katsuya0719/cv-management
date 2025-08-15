@@ -1,0 +1,18 @@
+
+@media print {
+  /* サイドメニューを非表示 */
+  .nextra-sidebar {
+    display: none !important;
+  }
+
+  /* ヘッダーも非表示にしたい場合 */
+  header, .nextra-nav-container {
+    display: none !important;
+  }
+
+  /* コンテンツ部分を幅いっぱいに広げる */
+  main {
+    max-width: 100%;
+    margin: 0;
+  }
+}
