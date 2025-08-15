@@ -3,13 +3,13 @@ import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import { ReactNode } from 'react'
+import type { Metadata } from 'next';
 import './globals.css';
 import '../styles/print.css';
- 
-export const metadata = {
-  // Define your metadata here
-  // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
-}
+
+export const metadata: Metadata = {
+  title: 'My Nextra Site',
+};
 
 const navbar = (
   <Navbar
@@ -19,6 +19,17 @@ const navbar = (
 )
 const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>
 
+// export default function RootLayout({
+//   children,
+// }: {
+//   children: React.ReactNode;
+// }) {
+//   return (
+//     <html lang="ja">
+//       <body>{children}</body>
+//     </html>
+//   );
+// }
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -30,11 +41,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
       suppressHydrationWarning
     >
-      <Head
-      // ... Your additional head options
-      >
-        {/* Your additional tags should be passed as `children` of `<Head>` element */}
-      </Head>
       <body>
         <Layout
           navbar={navbar}
