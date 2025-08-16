@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+h3.page-break {
+  font-size: 1.5rem;     /* Nextraのh3に近いサイズ */
+  font-weight: 600;        /* 少し太め */
+  line-height: 1.2;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nextra-breadcrumb {
+  display: none
+}

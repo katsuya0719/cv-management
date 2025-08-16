@@ -10,9 +10,25 @@
     display: none !important;
   }
 
+  /* フッター非表示 */
+  footer,
+  .nextra-footer {
+    display: none !important;
+  }
+
   /* コンテンツ部分を幅いっぱいに広げる */
   main {
     max-width: 100%;
     margin: 0;
   }
+  h3.page-break {
+    page-break-before: always;
+  }
+  body {
+    font-size: 12pt;   /* PDFでの基本サイズを指定 */
+    line-height: 1.1;  /* 行間も調整可能 */
+  }
 }
+
+
+
