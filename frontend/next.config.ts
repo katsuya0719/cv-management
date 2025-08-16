@@ -4,7 +4,11 @@ const withNextra = nextra({
 });
 
 export default withNextra({
-    output: 'export', // Enable static export
+    //output: 'export', // Enable static export
+    // i18n:{
+    //     locales: ['en', 'ja'],
+    //     defaultLocale: 'ja',
+    // },
     turbopack: {
         resolveAlias: {
             // Path to your `mdx-components` file with extension
