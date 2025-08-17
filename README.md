@@ -11,11 +11,5 @@ claude codeを起動するためのコマンド
 
 詳細：https://zenn.dev/hokuto_tech/articles/86d1edb33da61a
 
-# prompt engineering
 
-
-
-# structure
-- About (cvに相当する)
-- 自分が作った
 
