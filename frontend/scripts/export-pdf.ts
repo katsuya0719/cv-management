@@ -1,8 +1,13 @@
 // scripts/export-pdf.ts (CommonJS)
 const puppeteer = require('puppeteer');
 
-const TARGET_URL = 'http://localhost:3000/enexia';
-const OUTPUT_FILE = 'output.pdf';
+const BASE_URL = 'https://cv-management-sand.vercel.app/jp/';
+
+// コマンドライン引数からページパスを取得（例: node export-pdf.js jp/enexia）
+const pageArg = process.argv[2] || '';
+const TARGET_URL = `${BASE_URL}/${pageArg}`;
+
+const OUTPUT_FILE = `${pageArg || 'output'}.pdf`;
 
 (async () => {
   const browser = await puppeteer.launch({ headless: true });

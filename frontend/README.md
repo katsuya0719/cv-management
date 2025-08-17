@@ -8,6 +8,6 @@ pnpm dev
 
 ## Export pdf
 ```bash
-npx ts-node scripts/export-pdf.ts
+npx ts-node scripts/export-pdf.ts {page_name}
 ```
 
