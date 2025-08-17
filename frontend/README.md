@@ -11,3 +11,7 @@ pnpm dev
 npx ts-node scripts/export-pdf.ts {page_name}
 ```
 
+## Install dependent library
+```bash
+pnpm add {library to install}
+```
